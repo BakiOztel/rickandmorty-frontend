@@ -10,15 +10,21 @@ const CharacterCard = ({ data }) => {
     const dispatch = useDispatch();
     const AddFav = (data) => {
         if (listItems.length === 10) {
-            toast.error("You have reached the maximum number of favorites")
+            toast.error("You have exceeded the maximum number of favorite character additions. You must remove another character from favorites.")
         } else {
+
             const characterData = {
                 id: data.id,
                 name: data.name,
                 image: data.image
             }
-            dispatch(addToBasket(characterData))
-            toast.success("Added to Favorites")
+            const isDuplicate = listItems.some(item => item.id === characterData.id);
+            if (!isDuplicate) {
+                dispatch(addToBasket(characterData))
+                toast.success("Added to Favorites")
+            } else {
+                toast.error("You have already added this character to favorites.")
+            }
         }
 
     }

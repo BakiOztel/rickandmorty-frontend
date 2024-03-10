@@ -18,7 +18,7 @@ const FavCard = ({ data }) => {
                     <Button variant="danger" onClick={handleShow}>Delete</Button>
                 </Card.Body>
             </Card>
-            <FavModal show={show} setShow={setShow} id={data.id} />
+            <FavModal show={show} setShow={setShow} name={data.name} id={data.id} />
         </>
     );
 }

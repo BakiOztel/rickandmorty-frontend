@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import { useDispatch } from 'react-redux';
 import { deleteToList } from '../../store/favorite/favbasket.js';
 
-function FavModal({ show, setShow, id }) {
+function FavModal({ show, setShow, id, name }) {
 
     const dispatch = useDispatch();
     const handleClose = () => setShow(false);
@@ -15,8 +15,8 @@ function FavModal({ show, setShow, id }) {
 
     return (
         <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-                <Modal.Title>Are you sure you want to delete this?</Modal.Title>
+            <Modal.Header>
+                <Modal.Title>Are you sure you want to remove the character named {name} from favorites?</Modal.Title>
             </Modal.Header>
             <Modal.Footer>
                 <Button onClick={() => { deleteItem(id) }} variant="danger">
