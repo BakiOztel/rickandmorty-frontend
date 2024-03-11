@@ -45,7 +45,7 @@ const CharacterDetailPage = () => {
                         </Row>
                         <Row>
                             <Row>
-                                <h3> Episode Count:{lastNumbers.length}</h3>
+                                <h3> The number of episodes this character appeared in: {lastNumbers.length}</h3>
                             </Row>
                             <Row>
                                 {lastNumbers.map((data) => (

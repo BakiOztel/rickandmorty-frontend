@@ -17,9 +17,11 @@ const EpisodePage = () => {
 
     return (
 
+        // Episodelerin Fotoğrafları olmadığı için random bir karakter fotosu seçtim
         <Container>
             {isSuccess ? <Row>
                 <Col lg={4}>
+
                     <Image style={{ objectFit: "cover" }} className="w-75" src="https://rickandmortyapi.com/api/character/avatar/121.jpeg" />
                 </Col>
                 <Col lg={8}>
@@ -31,11 +33,11 @@ const EpisodePage = () => {
                             <h3>Episode : {data.episode}</h3>
                         </Row>
                         <Row>
-                            <h3>Çıkış tarihi : {data.air_date}</h3>
+                            <h3>Release date : {data.air_date}</h3>
                         </Row>
                         <Row>
                             <Row>
-                                <h3> Character Count:{lastNumbers.length}</h3>
+                                <h3> Number of characters in the section: {lastNumbers.length}</h3>
                             </Row>
                             <Row>
                                 {lastNumbers.map((data) => (
